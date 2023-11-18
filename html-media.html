@@ -7,15 +7,42 @@
     <meta charset="utf-8">
 </head>
 
-<div
-    style="direction: ltr; display: flex; justify-content: right; align-items: right; position: fixed; right: 0; bottom: 0;">
-    <button id="clockButton" class="clock-button">
-        <img src="./picture/clock.png" width="50" height="40">
-    </button>
-    <p id="demo"></p>
-</div>
-
 <style>
+    .about {
+        width: 350px;
+        height: 300px;
+        float: right;
+    }
+
+    .about h5 {
+        font: 16px, Tahoma;
+        color: black;
+        padding: 5px;
+        margin: 20px auto;
+    }
+
+    .about p {
+        font: 13px/2, Tahoma;
+        color: black;
+        text-align: justify;
+        margin: 25px;
+    }
+
+    .main-footer {
+        margin: 0 auto;
+        width: 1100px;
+    }
+
+    .footer {
+        width: 100%;
+        height: 350px;
+        background: #9c9c9c;
+        margin: 20px auto 0;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
     .clock-button {
         background: fixed;
         border: none;
@@ -37,14 +64,14 @@
     .Nlist {
         float: left;
         display: block;
-        color: white;
+        color: #111111;
         text-align: center;
         padding: 16px;
         text-decoration: none;
     }
 
     li a:hover {
-        background-color: #111111;
+        background-color: #fcfafa;
     }
 
     #demo {
@@ -189,7 +216,7 @@
     </div>
 </div>
 
-<body style="direction: rtl; background-color: aquamarine;">
+<body style="direction: rtl; background-color: #ca9797;">
     <br><br><br>
     <div style="text-align:center;">
         <img src="./picture/gensor-media.png" alt="gensor media" width="400" height="400">
@@ -209,7 +236,27 @@
             id="loginButton2">&#9997;</button>
     </ul>
 
+    <div class="clear"></div>
+    <div class="footer">
+        <div class="main">
+            <div class="about">
+                <h5>درباره ما</h5>
+                <p>در این سایت شما می توانید بهترین فیلم ها و آهنگ های ایرانی و خارجی را پیدا کنید و البته در این سایت
+                    با نمایش های صحنه ای ،سرگرمی و اخبار آرشیوی و روز دنیا و ایران وقت خود را به بهترین نحو بگذرانید.
+                    <br><br><br>در سایت gensor media.com همراه ما باشید و ما را به دوستان خود معرفی کنید.</p>
+            </div>
+        </div>
+
+        <div
+            style="direction: ltr; display: flex; justify-content: right; align-items: right; position: fixed; right: 10; bottom: 0;">
+            <button id="clockButton" class="clock-button">
+                <img src="./picture/clock.png" width="50" height="40">
+            </button>
+            <p id="demo"></p>
+        </div>
+    </div>
     <div id="scrollToTop">&#9650;</div>
+
 
     <script>
         document.getElementById('scrollToTop').addEventListener('click', function () {
