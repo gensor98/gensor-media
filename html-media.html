@@ -8,6 +8,24 @@
 </head>
 
 <style>
+    .popup3 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        padding: 20px;
+        background-color: #000000;
+        text-align: center;
+        border: 10px solid green;
+        color: red;
+        border-radius: 25%;
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+
     .about {
         width: 350px;
         height: 300px;
@@ -94,6 +112,7 @@
 
     li a:hover {
         background-color: #fcfafa;
+        border-radius: 50%;
     }
 
     #demo {
@@ -209,6 +228,21 @@
         background-color: red;
         /* سایر استایل‌های دلخواه شما */
     }
+
+    .close-icon3 {
+        cursor: pointer;
+        position: absolute;
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        line-height: 20px;
+        border-radius: 5px;
+        font-size: xx-large;
+        color: blue;
+        left: 3.5%;
+        top: 45%;
+        /* سایر استایل‌های دلخواه شما */
+    }
 </style>
 
 <div id="popup" class="popup">
@@ -245,6 +279,13 @@
     </div>
 </div>
 
+<div id="popup3" class="popup3">
+    <h2><img src="./picture/هشدار.png" width="100" height="100"></h2><a class="close-icon3" id="close-icon3">ادامه&#8592</a>
+    <hr>
+    <p style="font-size: x-large;"><b>از سایت بازدید فرمائید ولی مواظب چشمانتان باشید که ضعیف نشود چون به قدری لذت می برید که زمان را فراموش می کنید و دل کندن از آن سخت می شود.</b></p>
+    
+</div>
+
 <body
     style="direction: rtl; background-color: wheat; background-image: url(./picture/متن2); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center;">
     <ul id="Hlist">
@@ -266,9 +307,10 @@
         <img src="./picture/gs-media-img.jpg" width="400" height="200">
     </div>
     <blockquote style="font-size:100%; font-family:cursive; border:4px outset black; border-radius: 10px;">
-        <p><img style="float: right;" src="./picture/اطلاعیه.png" width="120" height="120"><b> gensor media.com رسانه ای است برای فراهم ساختن اوقات و فراغت شما و در این رسانه شما با فیلم ها و آهنگ
+        <p style="font-size: large;"><img style="float: right;" src="./picture/اطلاعیه.png" width="130" height="130"><b> gensor media.com رسانه ای
+                است برای فراهم ساختن اوقات و فراغت شما و در این رسانه شما با فیلم ها و آهنگ
                 های گوناگون ایران و جهان می توانید اوقات خود را به سلیقه خود بسازید.<br><br>gensor media قصد دارد همراه
-                داستان ها متنی و پادکستهای آن ،سرگرمی ها ،اخبار روز وآرشیوی و همچنین کارتون ها وانیمیشن ها برای کودکان و
+                داستان ها متنی و پادکست های آن ، سرگرمی ها ، اخبار روز و آرشیوی و همچنین کارتون ها وانیمیشن ها برای کودکان و
                 نوجوانان عزیزتان و نمایش های صحنه ای برای هنردوستان سرگرمی فراهم کند و در میان آن ها با مسابقات و بازی
                 های سایت توانایی های خودرا بسنجید.
             </b></p>
@@ -305,6 +347,35 @@
 
 
     <script>
+        window.onload = function () {
+            var popup3 = document.getElementById("popup3");
+            var closeBtn = document.getElementById("close-icon3");
+            var isPopupOpen = false;
+
+            closeBtn.addEventListener("click", function () {
+                popup3.style.display = "none";
+                isPopupOpen = false;
+                document.body.classList.remove("no-scroll");
+            });
+
+            window.addEventListener("scroll", function () {
+                if (isPopupOpen) {
+                    window.scrollTo(0, 0);
+                }
+            });
+
+            // تابعی برای باز کردن پاپ آپ
+            function openPopup() {
+                popup3.style.display = "block";
+                isPopupOpen = true;
+                document.body.classList.add("no-scroll");
+            }
+
+            // فراخوانی تابع openPopup() برای باز کردن پاپ آپ
+            // می‌توانید این را در هر مکان دلخواه در صفحه فراخوانی کنید
+            openPopup();
+        };
+
         document.getElementById('scrollToTop').addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
