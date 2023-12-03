@@ -20,6 +20,17 @@
         border: 10px solid green;
         color: red;
         border-radius: 25%;
+        z-index: 9999;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
     }
 
     .no-scroll {
@@ -243,6 +254,25 @@
         top: 45%;
         /* سایر استایل‌های دلخواه شما */
     }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: larger;
+    }
+
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .col {
+        width: 33.33%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
 </style>
 
 <div id="popup" class="popup">
@@ -279,11 +309,14 @@
     </div>
 </div>
 
+<div id="overlay" class="overlay"></div>
 <div id="popup3" class="popup3">
-    <h2><img src="./picture/هشدار.png" width="100" height="100"></h2><a class="close-icon3" id="close-icon3">ادامه&#8592</a>
+    <h2><img src="./picture/هشدار.png" width="100" height="100"></h2><a class="close-icon3"
+        id="close-icon3">ادامه&#8592</a>
     <hr>
-    <p style="font-size: x-large;"><b>از سایت بازدید فرمائید ولی مواظب چشمانتان باشید که ضعیف نشود چون به قدری لذت می برید که زمان را فراموش می کنید و دل کندن از آن سخت می شود.</b></p>
-    
+    <p style="font-size: x-large;"><b>از سایت بازدید فرمائید ولی مواظب چشمانتان باشید که ضعیف نشود چون به قدری لذت می
+            برید که زمان را فراموش می کنید و دل کندن از آن سخت می شود.</b></p>
+
 </div>
 
 <body
@@ -304,17 +337,61 @@
     </ul>
     <br><br><br>
     <div style="text-align:center;">
-        <img src="./picture/gs-media-img.jpg" width="400" height="200">
+        <img src="./picture/gensor-media.png" width="400" height="400">
     </div>
     <blockquote style="font-size:100%; font-family:cursive; border:4px outset black; border-radius: 10px;">
-        <p style="font-size: large;"><img style="float: right;" src="./picture/اطلاعیه.png" width="130" height="130"><b> gensor media.com رسانه ای
+        <p style="font-size: large;"><img style="float: right;" src="./picture/اطلاعیه.png" width="130" height="130"><b>
+                gensor media.com رسانه ای
                 است برای فراهم ساختن اوقات و فراغت شما و در این رسانه شما با فیلم ها و آهنگ
                 های گوناگون ایران و جهان می توانید اوقات خود را به سلیقه خود بسازید.<br><br>gensor media قصد دارد همراه
-                داستان ها متنی و پادکست های آن ، سرگرمی ها ، اخبار روز و آرشیوی و همچنین کارتون ها وانیمیشن ها برای کودکان و
+                داستان ها متنی و پادکست های آن ، سرگرمی ها ، اخبار روز و آرشیوی و همچنین کارتون ها وانیمیشن ها برای
+                کودکان و
                 نوجوانان عزیزتان و نمایش های صحنه ای برای هنردوستان سرگرمی فراهم کند و در میان آن ها با مسابقات و بازی
                 های سایت توانایی های خودرا بسنجید.
             </b></p>
     </blockquote>
+
+    <hr>
+
+    <div class="image-container">
+        <div class="row">
+            <div class="col">
+                <a href="#"><img src="./picture/فیلم.avif" width="50%" height="60%" alt="فیلم و سریال"></a>
+                <h1 style="color: red; font-size: x-large;">فیلم و سریال</h1>
+                <p>توضیحات تصویر 1</p>
+            </div>
+            <div class="col">
+                <a href="#"><img src="./picture/آهنگ.avif" width="50%" height="60%" alt="آهنگ"></a>
+                <h1 style="color: red; font-size: x-large;">آهنگ</h1>
+                <p>توضیحات تصویر 2</p>
+            </div>
+            <div class="col">
+                <a href="#"><img src="./picture/کارتون.avif" width="50%" height="60%" alt="کارتون و انیمیشن"></a>
+                <h1 style="color: red; font-size: x-large;">کارتون و انیمیشن</h1>
+                <p>توضیحات تصویر 3</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="#"><img src="./picture/تئاتر.avif" width="50%" height="60%" alt="نمایش صحنه ای"></a>
+                <h1 style="color: red; font-size: x-large;">نمایش صحنه ای</h1>
+                <p>توضیحات تصویر 4</p>
+            </div>
+            <div class="col">
+                <a href="#"><img src="./picture/سرگرمی.avif" width="50%" height="60%" alt="سرگرمی"></a>
+                <h1 style="color: red; font-size: x-large;">سرگرمی</h1>
+                <p>توضیحات تصویر 5</p>
+            </div>
+            <div class="col">
+                <a href="#"><img src="./picture/اخبار.avif" width="50%" height="60%" alt="اخبار"></a>
+                <h1 style="color: red; font-size: x-large;">اخبار</h1>
+                <p>توضیحات تصویر 6</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
     <div class="clear"></div>
     <div class="footer">
         <div class="main">
@@ -348,12 +425,18 @@
 
     <script>
         window.onload = function () {
+            var overlay = document.getElementById("overlay");
             var popup3 = document.getElementById("popup3");
             var closeBtn = document.getElementById("close-icon3");
             var isPopupOpen = false;
 
+            overlay.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+
             closeBtn.addEventListener("click", function () {
                 popup3.style.display = "none";
+                overlay.style.display = "none";
                 isPopupOpen = false;
                 document.body.classList.remove("no-scroll");
             });
@@ -367,6 +450,7 @@
             // تابعی برای باز کردن پاپ آپ
             function openPopup() {
                 popup3.style.display = "block";
+                overlay.style.display = "block";
                 isPopupOpen = true;
                 document.body.classList.add("no-scroll");
             }
