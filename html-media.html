@@ -17,7 +17,7 @@
         padding: 20px;
         background-color: #000000;
         text-align: center;
-        border: 10px solid green;
+        border: 15px outset green;
         color: red;
         border-radius: 25%;
         z-index: 9999;
@@ -229,7 +229,7 @@
         cursor: pointer;
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 15px;
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -272,11 +272,14 @@
         padding: 10px;
         box-sizing: border-box;
         text-align: center;
+        background-color: rgba(55, 175, 135, 0.432);
+        border: 15px outset #000000;
+        border-radius: 25%;
     }
 </style>
 
 <div id="popup" class="popup">
-    <div class="popup-content">
+    <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
         <span class="close-icon">&#10006;</span>
         <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش آمدید&#128151;
         </h2>
@@ -291,7 +294,7 @@
 </div>
 
 <div id="popup2" class="popup">
-    <div class="popup-content">
+    <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
         <span class="close-icon2">&#10006;</span>
         <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش آمدید&#128151;
         </h2>
@@ -331,16 +334,16 @@
         <li><a class="Nlist" href="#">اخبار</a></li>
         <li><a class="Nlist" href="#">ارتباط با ما</a></li>
         <button style="float: right; font-size:200%; background-color: #0084ff; border: none; cursor: pointer;"
-            id="loginButton">&#128682;</button>
+            id="loginButton" title="ورود">&#128682;</button>
         <button style="float: right; font-size:200%; background-color: #0084ff; border: none; cursor: pointer;"
-            id="loginButton2">&#9997;</button>
+            id="loginButton2" title="ثبت نام">&#9997;</button>
     </ul>
     <br><br><br>
     <div style="text-align:center;">
         <img src="./picture/gensor-media.png" width="400" height="400">
     </div>
-    <blockquote style="font-size:100%; font-family:cursive; border:4px outset black; border-radius: 10px;">
-        <p style="font-size: large;"><img style="float: right;" src="./picture/اطلاعیه.png" width="130" height="130"><b>
+    <blockquote style="font-size:100%; font-family:cursive; border: 15px outset black; border-radius: 25px; background-color: rgba(55, 175, 135, 0.432);;">
+        <p style="font-size: large;"><img style="float: right;" src="./picture/اطلاعیه.png" width="155" height="155"><b>
                 gensor media.com رسانه ای
                 است برای فراهم ساختن اوقات و فراغت شما و در این رسانه شما با فیلم ها و آهنگ
                 های گوناگون ایران و جهان می توانید اوقات خود را به سلیقه خود بسازید.<br><br>gensor media قصد دارد همراه
@@ -356,34 +359,32 @@
     <div class="image-container">
         <div class="row">
             <div class="col">
-                <a href="#"><img src="./picture/فیلم.avif" width="50%" height="60%" alt="فیلم و سریال"></a>
+                <a href="#"><img src="./picture/فیلم.avif" width="50%" height="40%" alt="فیلم و سریال"></a><hr>
                 <h1 style="color: red; font-size: x-large;">فیلم و سریال</h1>
                 <p>توضیحات تصویر 1</p>
             </div>
             <div class="col">
-                <a href="#"><img src="./picture/آهنگ.avif" width="50%" height="60%" alt="آهنگ"></a>
+                <a href="#"><img src="./picture/آهنگ.avif" width="50%" height="40%" alt="آهنگ"></a><hr>
                 <h1 style="color: red; font-size: x-large;">آهنگ</h1>
                 <p>توضیحات تصویر 2</p>
             </div>
             <div class="col">
-                <a href="#"><img src="./picture/کارتون.avif" width="50%" height="60%" alt="کارتون و انیمیشن"></a>
+                <a href="#"><img src="./picture/کارتون.avif" width="50%" height="40%" alt="کارتون و انیمیشن"></a><hr>
                 <h1 style="color: red; font-size: x-large;">کارتون و انیمیشن</h1>
                 <p>توضیحات تصویر 3</p>
             </div>
-        </div>
-        <div class="row">
             <div class="col">
-                <a href="#"><img src="./picture/تئاتر.avif" width="50%" height="60%" alt="نمایش صحنه ای"></a>
+                <a href="#"><img src="./picture/تئاتر.avif" width="50%" height="40%" alt="نمایش صحنه ای"></a><hr>
                 <h1 style="color: red; font-size: x-large;">نمایش صحنه ای</h1>
                 <p>توضیحات تصویر 4</p>
             </div>
             <div class="col">
-                <a href="#"><img src="./picture/سرگرمی.avif" width="50%" height="60%" alt="سرگرمی"></a>
+                <a href="#"><img src="./picture/سرگرمی.avif" width="50%" height="40%" alt="سرگرمی"></a><hr>
                 <h1 style="color: red; font-size: x-large;">سرگرمی</h1>
                 <p>توضیحات تصویر 5</p>
             </div>
             <div class="col">
-                <a href="#"><img src="./picture/اخبار.avif" width="50%" height="60%" alt="اخبار"></a>
+                <a href="#"><img src="./picture/اخبار.avif" width="50%" height="40%" alt="اخبار"></a><hr>
                 <h1 style="color: red; font-size: x-large;">اخبار</h1>
                 <p>توضیحات تصویر 6</p>
             </div>
@@ -397,11 +398,12 @@
         <div class="main">
             <div class="about">
                 <h5>درباره ما</h5>
+                <hr>
                 <p>در این رسانه شما می توانید با بهترین فیلم ها و آهنگ های ایرانی و خارجی همراه باشید و همچنین در این
                     سایت
                     از نمایش های صحنه ای ،سرگرمی و اخبار آرشیوی و روز دنیا و ایران می توانید لذت ببرید و اوقات خوشی را
                     به ارمغان بیاورید.
-                    <br><br><br>در سایت gensor media.com همراه ما باشید و ما را به دوستان خود معرفی کنید.
+                    <br><br>در سایت gensor media.com همراه ما باشید و ما را به دوستان خود معرفی کنید.
                 </p>
             </div>
         </div>
@@ -415,6 +417,7 @@
         </div>
         <div class="social">
             <h5>ارتباط با ما</h5>
+            <hr>
         </div>
         <div style="text-align: center;">
             <img src="./picture/gensor-media.png" width="296" height="296">
