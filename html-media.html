@@ -104,15 +104,15 @@
         padding: 1px;
         overflow: hidden;
         background-color: #0084ff;
-        position: fixed;
-        width: 100%;
+        position: absolute;
+        width: fit-content;
         top: 0;
-        left: 0;
         right: 0;
+        border: 10px outset #000000;
     }
 
     .Nlist {
-        float: left;
+        float: right;
         display: block;
         color: #111111;
         text-align: center;
@@ -146,7 +146,6 @@
 
     .popup {
         display: none;
-        position: fixed;
         z-index: 1;
         left: 0;
         top: 0;
@@ -197,16 +196,15 @@
         position: fixed;
         bottom: 0px;
         left: 0px;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border: none;
-        color: #111111;
+        color: red;
         text-align: center;
-        line-height: 40px;
-        font-size: 24px;
+        line-height: 45px;
+        font-size: xx-large;
         cursor: pointer;
-        background-color: beige;
-        animation: fade 0.5s infinite alternate;
+        background-color: black;
         border-radius: 50%;
     }
 
@@ -332,15 +330,15 @@
         <li><a class="Nlist" href="#">نمایش صحنه ای</a></li>
         <li><a class="Nlist" href="#">سرگرمی</a></li>
         <li><a class="Nlist" href="#">اخبار</a></li>
-        <li><a class="Nlist" href="#">ارتباط با ما</a></li>
-        <button style="float: right; font-size:200%; background-color: #0084ff; border: none; cursor: pointer;"
+        <li id="scrollTobottom" style="cursor: pointer;"><a class="Nlist">ارتباط با ما</a></li>
+        <button style="float: right; font-size:200%; background: none; border: none; cursor: pointer;"
             id="loginButton" title="ورود">&#128682;</button>
-        <button style="float: right; font-size:200%; background-color: #0084ff; border: none; cursor: pointer;"
+        <button style="float: right; font-size:200%; background: none; border: none; cursor: pointer;"
             id="loginButton2" title="ثبت نام">&#9997;</button>
     </ul>
-    <br><br><br>
+
     <div style="text-align:center;">
-        <img src="./picture/gensor-media.png" width="400" height="400">
+        <img src="./picture/gensor-media.png" width="470" height="470">
     </div>
     <blockquote
         style="font-size:100%; font-family:cursive; border: 15px outset black; border-radius: 25px; background-color: rgba(55, 175, 135, 0.432);">
@@ -357,19 +355,21 @@
 
     <hr>
 
-    <p style="font-size: x-large; font-family:cursive;">خوش آمدید به سایت ما، جایی که همه‌ی انتظارات شما درباره فیلم،
+    <p style="font-size: x-large; font-family:cursive;"><b>خوش آمدید به سایت ما، جایی که همه‌ی انتظارات شما درباره فیلم،
         آهنگ و انیمیشن برآورده می‌شود. اینجا یک دنیای پر از هیجان و سرگرمی است که شما را به دنیایی از هنر و تفریح
         می‌برد.
 
         ما با افتخار مجموعه‌ای بی‌نظیر از فیلم‌های برتر جهان را برای شما تهیه کرده‌ایم. از جدیدترین فیلم‌های ایران و
         جهان تا آثار مستند و مستقل، همه چیز در اینجا وجود دارد. با تنوع بی‌نظیری که در انتخاب فیلم‌ها داریم، مطمئناً شما
-        هم فیلمی خواهید یافت که به سلیقه‌ی خودتان بخوبی می‌پردازد.
+        هم فیلمی خواهید یافت که به سلیقه‌ی خودتان بخوبی می‌پردازد.</b>
 
     <blockquote style="border: 15px outset goldenrod; border-radius: 50%; background-color: rgba(15, 15, 15);">
-        <p style="font-size: xx-large; font-family:cursive; text-align: center; color: #ac1818;">"اما فیلم تنها بخشی از
+        <p
+            style="animation: fade 0.25s infinite alternate; font-size: xxx-large; font-family:cursive; text-align: center; color: #ac1818;">
+            "اما فیلم تنها بخشی از
             تجربه‌ی ما نیست."</p>
     </blockquote>
-    <p style="font-size: x-large; font-family:cursive;">ما همچنین بهترین آهنگ‌ها و انیمیشن‌ها را برای شما فراهم
+    <p style="font-size: x-large; font-family:cursive;"><b>ما همچنین بهترین آهنگ‌ها و انیمیشن‌ها را برای شما فراهم
         کرده‌ایم. از
         موسیقی‌های پاپ و راک تا آثار کلاسیک و جاز ایران وجهان ، هر سبکی که دوست داشته باشید، در اینجا پیدا می‌شود.
         همچنین انیمیشن‌های جذاب و دیدنی ایران و جهان برای کودکان و بزرگسالان را نیز در اختیارتان قرار می‌دهیم.
@@ -383,7 +383,7 @@
         سایت ما بسیار بالاست تا شما بدون تاخیر به محتوا دسترسی داشته باشید.
 
         باور کنید، سایت ما جایی است که شما به دنیایی از هنر، سرگرمی و تفریح خواهید پرداخت. با فیلم‌های برتر، آهنگ‌های
-        شگفت‌انگیز و انیمیشن‌های جذاب، ما به شما تجربه‌ای بی‌نظیر از هنر و سرگرمی را ارائه می‌دهیم.</p>
+        شگفت‌انگیز و انیمیشن‌های جذاب، ما به شما تجربه‌ای بی‌نظیر از هنر و سرگرمی را ارائه می‌دهیم.</b></p>
 
     <hr>
 
@@ -394,7 +394,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">فیلم و سریال</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.5s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
             <div class="col">
@@ -402,7 +402,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">آهنگ</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.75s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
             <div class="col">
@@ -410,7 +410,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">کارتون و انیمیشن</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.5s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
             <div class="col">
@@ -418,7 +418,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">نمایش صحنه ای</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.75s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
             <div class="col">
@@ -426,7 +426,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">سرگرمی</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.5s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
             <div class="col">
@@ -434,7 +434,7 @@
                 <hr>
                 <h1 style="color: rgb(20, 0, 90); font-size: x-large;">اخبار</h1>
                 <div style="direction: rtl;"><a href="#"><button
-                            style="background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
+                            style="animation: fade 0.75s infinite alternate; background-color: #000000; color: red; font-size: large; cursor: pointer; border-radius: 50%;"
                             type="continue">کلیک کنید</button></a></div>
             </div>
         </div>
@@ -442,16 +442,14 @@
 
     <hr>
 
-    <p style="font-size: x-large; font-family:cursive;"><b>پس چرا منتظری؟ با ما همراه شوید و به دنیایی از هنر و سرگرمی
-            فروشگاه ما قدم گذارید و تجربه‌ی بی‌نظیری را دریافت کنید و همیشه به روز باشید و با آخرین اخبار و محتواهای
-            جذاب
-            سایت ما، هر روز یک تجربه‌ی جدید را تجربه کنید.</b></p>
     <br><br><br>
     <blockquote style="border: 15px outset goldenrod; border-radius: 45%; background-color: rgb(15, 15, 15);">
-        <p style="font-size: xx-large; font-family:cursive; text-align: center; color: #ac1818;"><b>"ما منتظر شما هستیم.
+        <p
+            style="animation: fade 0.25s infinite alternate; font-size: xx-large; font-family:cursive; text-align: center; color: #ac1818;">
+            <b>"ما منتظر شما هستیم.
                 به
                 سایت ما سر بزنید و به دنیای هنر و
-                سرگرمی فروشگاه ما خوش آمدید!"</b>
+                سرگرمی قدم گذارید!"</b>
         </p>
     </blockquote>
 
@@ -524,6 +522,13 @@
             // می‌توانید این را در هر مکان دلخواه در صفحه فراخوانی کنید
             openPopup();
         };
+
+        document.getElementById('scrollTobottom').addEventListener('click', function () {
+            window.scrollTo({
+                top: 2000,
+                behavior: "smooth"
+            });
+        });
 
         document.getElementById('scrollToTop').addEventListener('click', function () {
             window.scrollTo({
