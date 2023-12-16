@@ -157,8 +157,7 @@
 
     .popup-content {
         position: fixed;
-        background-color: #fefefe;
-        background-image: url(./picture/بک\ گراند1.jpg);
+        background-color: #7a083d;
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -166,6 +165,7 @@
         padding: 20px;
         border: 1px solid #888;
         width: 300px;
+        font-size: larger;
     }
 
     .popup-content label,
@@ -260,40 +260,45 @@
         border-radius: 25%;
     }
 </style>
-
-<div id="popup" class="popup">
-    <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
-        <span class="close-icon">&#10006;</span>
-        <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش آمدید&#128151;
-        </h2>
-        <form style="direction: rtl; font-size: larger;">
-            <label for="username">نام کاربری:</label>
-            <input type="text" id="username">
-            <label for="password">رمز عبور:</label>
-            <input type="password" id="password">
-            <div style="direction: ltr;"><button type="submit">ورود</button></div>
-        </form>
+<b>
+    <div id="popup" class="popup">
+        <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
+            <span class="close-icon">&#10006;</span>
+            <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش
+                آمدید&#128151;
+            </h2>
+            <form style="direction: rtl; font-size: larger;">
+                <label for="username">نام کاربری:</label>
+                <input type="text" id="username">
+                <label for="password">رمز عبور:</label>
+                <input type="password" id="password">
+                <div style="direction: ltr;"><button style="cursor: pointer; font-size: large;"
+                        type="submit"><b>ورود</b></button></div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div id="popup2" class="popup">
-    <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
-        <span class="close-icon2">&#10006;</span>
-        <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش آمدید&#128151;
-        </h2>
-        <form style="direction: rtl; font-size: larger;">
-            <label for="username">نام کاربری:</label>
-            <input type="text" id="username">
-            <label for="username">ایمیل:</label>
-            <input type="email" id="username">
-            <label for="password">رمز عبور:</label>
-            <input type="password" id="password">
-            <label for="password">تکرار رمز عبور:</label>
-            <input type="password" id="password">
-            <div style="direction: ltr;"><button type="submit">ثبت نام</button></div>
-        </form>
+    <div id="popup2" class="popup">
+        <div class="popup-content" style="border: 15px outset black; border-radius: 15%;">
+            <span class="close-icon2">&#10006;</span>
+            <h2 style="color:black; font-size:200%; font-family:cursive; text-align: center;"> &#128151;خوش
+                آمدید&#128151;
+            </h2>
+            <form style="direction: rtl; font-size: larger;">
+                <label for="username">نام کاربری:</label>
+                <input type="text" id="username">
+                <label for="username">ایمیل:</label>
+                <input type="email" id="username">
+                <label for="password">رمز عبور:</label>
+                <input type="password" id="password">
+                <label for="password">تکرار رمز عبور:</label>
+                <input type="password" id="password">
+                <div style="direction: ltr;"><button style="cursor: pointer; font-size: large;" type="submit"><b>ثبت
+                            نام</b></button></div>
+            </form>
+        </div>
     </div>
-</div>
+</b>
 
 <div id="overlay" class="overlay"></div>
 <div id="close-icon3">
@@ -310,18 +315,20 @@
 <body
     style="direction: rtl; background-color: wheat; background-image: url(./picture/متن2); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center;">
     <ul id="Hlist">
-        <b><li><a class="Nlist" href="./html-media.html">صفحه اصلی</a></li>
-        <li><a class="Nlist" href="#">فیلم و سریال</a></li>
-        <li><a class="Nlist" href="#">آهنگ</a></li>
-        <li><a class="Nlist" href="#">کارتون و انیمیشن</a></li>
-        <li><a class="Nlist" href="#">نمایش صحنه ای</a></li>
-        <li><a class="Nlist" href="#">سرگرمی</a></li>
-        <li><a class="Nlist" href="#">اخبار</a></li>
-        <li id="scrollTobottom" style="cursor: pointer;"><a class="Nlist">ارتباط با ما</a></li>
-        <button style="float: right; font-size:225%; background: none; border: none; cursor: pointer;" id="loginButton"
-            title="ورود">&#128682;</button>
-        <button style="float: left; font-size:225%; background: none; border: none; cursor: pointer;" id="loginButton2"
-            title="ثبت نام">&#9997;</button></b>
+        <b>
+            <li><a class="Nlist" href="./html-media.html">صفحه اصلی</a></li>
+            <li><a class="Nlist" href="#">فیلم و سریال</a></li>
+            <li><a class="Nlist" href="#">آهنگ</a></li>
+            <li><a class="Nlist" href="#">کارتون و انیمیشن</a></li>
+            <li><a class="Nlist" href="#">نمایش صحنه ای</a></li>
+            <li><a class="Nlist" href="#">سرگرمی</a></li>
+            <li><a class="Nlist" href="#">اخبار</a></li>
+            <li id="scrollTobottom" style="cursor: pointer;"><a class="Nlist">ارتباط با ما</a></li>
+            <button style="float: right; font-size:225%; background: none; border: none; cursor: pointer;"
+                id="loginButton" title="ورود">&#128682;</button>
+            <button style="float: left; font-size:225%; background: none; border: none; cursor: pointer;"
+                id="loginButton2" title="ثبت نام">&#9997;</button>
+        </b>
     </ul>
 
     <div style="text-align:center;">
