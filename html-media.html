@@ -563,8 +563,8 @@
 
         document.getElementById('scrollTobottom').addEventListener('click', function () {
             window.scrollTo({
-                top: 2000,
-                behavior: "smooth"
+            top: document.body.scrollHeight,
+            behavior: "smooth"
             });
         });
 
