@@ -82,8 +82,27 @@
 
     <hr>
 
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <b>
+            <p
+                style="font-size: xxx-large; font-family:cursive; text-align: center; color: #740505; display: inline-block; border-bottom: 5px solid rgb(255, 0, 0);">
+                "جوینده یابنده است!"</p>
+        </b>
+        <button
+            style="cursor: pointer; font-size: xx-large; padding: 15px 30px; background: linear-gradient(45deg, #f80000, #f5b3a8); color: rgb(0, 0, 0); border: 10px outset #000000; border-radius: 50px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 8px rgba(0, 0, 0, 0.3)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)';"
+            onclick="fetchAndDisplayImages()"><b>یافتن سوژه ها</b></button>
+
+        <button
+            style="cursor: pointer; font-size: xx-large; padding: 15px 30px; background: linear-gradient(45deg, #022f83, #8690a1); color: rgb(0, 0, 0); border: 10px outset #000000; border-radius: 50px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 8px rgba(0, 0, 0, 0.3)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)';"
+            onclick="transferDataAndOpenPage()"><b>یافتن گمشده ها</b></button>
+    </div>
+
     <hr>
-    
+
     <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
         <p
             style="font-size: xxx-large; font-family:cursive; text-align: center; color: #000000; display: inline-block; border-bottom: 5px solid red;">
@@ -327,6 +346,76 @@
         }
 
         setInterval(updateClock, 1000);
+
+        function connectToAllServers1() {
+            console.log("Connecting to Server 1...");
+            console.log("Connecting to Server 2...");
+            console.log("Connecting to Server 3...");
+            console.log("Connecting to Server 4...");
+            // Add your server connection logic here for all servers
+        } function connectToAllServers2() {
+            console.log("Connecting to Server 1...");
+            console.log("Connecting to Server 2...");
+            console.log("Connecting to Server 3...");
+            console.log("Connecting to Server 4...");
+            // Add your server connection logic here for all servers
+        }
+
+        function fetchAndDisplayImages() {
+            const servers = [
+                "https://server1.example.com/images",
+                "https://server2.example.com/images",
+                "https://server3.example.com/images",
+                "https://server4.example.com/images"
+            ];
+
+            const imageContainer = document.createElement('div');
+            imageContainer.style.display = 'flex';
+            imageContainer.style.flexWrap = 'wrap';
+            imageContainer.style.justifyContent = 'center';
+            imageContainer.style.marginTop = '20px';
+
+            servers.forEach(server => {
+                fetch(server)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.images.forEach(imageUrl => {
+                            const img = document.createElement('img');
+                            img.src = imageUrl;
+                            img.alt = "Subject Image";
+                            img.style.width = '200px';
+                            img.style.height = '200px';
+                            img.style.margin = '10px';
+                            img.style.border = '2px solid #000';
+                            img.style.borderRadius = '10px';
+                            imageContainer.appendChild(img);
+                        });
+                    })
+                    .catch(error => console.error(`Error fetching from ${server}:`, error));
+            });
+
+            const newWindow = window.open('', '_blank');
+            newWindow.document.body.appendChild(imageContainer);
+        }
+
+        function transferDataAndOpenPage() {
+            const data = {
+                key1: "value1",
+                key2: "value2",
+                key3: "value3",
+                key4: "value4"
+            };
+
+            // Simulate sending data to servers
+            console.log("Sending data to Server 1:", data);
+            console.log("Sending data to Server 2:", data);
+            console.log("Sending data to Server 3:", data);
+            console.log("Sending data to Server 4:", data);
+
+            // Open the new page
+            window.open('./new-page.html', '_blank');
+        }
+
     </script>
 
 </body>
