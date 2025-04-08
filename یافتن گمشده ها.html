@@ -88,9 +88,60 @@
                 style="font-size: xxx-large; font-family:cursive; text-align: center; color: #740505; display: inline-block; border-bottom: 5px solid rgb(255, 0, 0);">
                 "جوینده یابنده است!"</p>
         </b>
+
+        <div id="uploadSection" style="text-align: center; width: 30%; margin: auto;">
+            <form id="uploadForm" enctype="multipart/form-data"
+                style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white;">
+                <input type="file" id="photoUpload" accept="image/*" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; background-color: black; color: white;">
+                <br>
+                <label for="fullName" style="font-weight: bold;">نام و نام خانوادگی</label>
+                <br>
+                <input type="text" id="fullName" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="age" style="font-weight: bold;">سن</label>
+                <br>
+                <input type="number" id="age" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="apearence" style="font-weight: bold;">مشخصات ظاهری</label>
+                <br>
+                <input type="text" id="apearence" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="healthStatus" style="font-weight: bold;">وضعیت سلامت</label>
+                <br>
+                <input type="text" id="healthStatus" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="clothing" style="font-weight: bold;">پوشش</label>
+                <br>
+                <input type="text" id="clothing" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="missingLocation" style="font-weight: bold;">محل گمشدن</label>
+                <br>
+                <input type="text" id="missingLocation" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="location" style="font-weight: bold;">لوکیشن</label>
+                <br>
+                <input type="url" id="location" placeholder="لینک لوکیشن" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <button type="submit"
+                    style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">آپلود</button>
+            </form>
+        </div>
+        <hr>
+        <div id="gallerySection" style="text-align: center; width: 80%; margin: auto; display: none;"></div>
+        <div id="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        </div>
     </div>
-    
-    <hr>
+    <div id="pagination" style="margin-top: 20px; text-align: center;"></div>
+
+
 
     <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
         <p
@@ -251,7 +302,6 @@
                 }
             });
 
-            // تابعی برای باز کردن پاپ آپ
             function openPopup() {
                 popup3.style.display = "block";
                 overlay.style.display = "block";
@@ -259,8 +309,6 @@
                 document.body.classList.add("no-scroll");
             }
 
-            // فراخوانی تابع openPopup() برای باز کردن پاپ آپ
-            // می‌توانید این را در هر مکان دلخواه در صفحه فراخوانی کنید
             openPopup();
         };
 
@@ -277,47 +325,40 @@
                 behavior: 'smooth'
             });
         });
+
         document.getElementById("loginButton").addEventListener("click", function () {
             document.getElementById("popup").style.display = "flex";
         });
+
         document.getElementById("loginButton2").addEventListener("click", function () {
             document.getElementById("popup2").style.display = "flex";
         });
 
         document.querySelector("#popup form").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            // Perform login validation or send the data to the server
             console.log("Username: " + username);
             console.log("Password: " + password);
             document.getElementById("popup").style.display = "none";
         });
 
-        // پیدا کردن آیکون ضبطر با استفاده از کلاس
         var closeIcon = document.querySelector('.close-icon');
-
-        // اضافه کردن رویداد کلیک به آیکون ضبطر
         closeIcon.addEventListener('click', function () {
             var popup = document.getElementById('popup');
-            popup.style.display = 'none'; // مخفی کردن پنجره
+            popup.style.display = 'none';
         });
 
-        // پیدا کردن آیکون بستن با استفاده از کلاس
         var closeIcon2 = document.querySelector('.close-icon2');
-
-        // اضافه کردن رویداد کلیک به آیکون بستن
         closeIcon2.addEventListener('click', function () {
             var popup2 = document.getElementById('popup2');
-            popup2.style.display = 'none'; // مخفی کردن پنجره
+            popup2.style.display = 'none';
         });
 
         var clockVisible = false;
 
         function toggleClock() {
             var clockElement = document.getElementById("demo");
-            var clockButton = document.getElementById("clockButton");
-
             if (clockVisible) {
                 clockElement.style.display = "none";
                 clockVisible = false;
@@ -334,12 +375,126 @@
             var hours = currentTime.getHours();
             var minutes = currentTime.getMinutes();
             var seconds = currentTime.getSeconds();
-
             clockElement.innerHTML = hours + ":" + minutes + ":" + seconds;
         }
 
         setInterval(updateClock, 1000);
 
+        const gallery = document.getElementById("gallery");
+        const pagination = document.getElementById("pagination");
+        const photosPerPage = 10;
+        let photos = JSON.parse(localStorage.getItem("photos")) || [];
+        let currentPage = 1;
+
+        document.getElementById("uploadForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const photoFile = document.getElementById("photoUpload").files[0];
+            const fullName = document.getElementById("fullName").value;
+            const age = document.getElementById("age").value;
+            const apearence = document.getElementById("apearence").value;
+            const healthStatus = document.getElementById("healthStatus").value;
+            const clothing = document.getElementById("clothing").value;
+            const missingLocation = document.getElementById("missingLocation").value;
+            const location = document.getElementById("location").value;
+
+            if (photoFile) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    photos.push({
+                        photo: e.target.result,
+                        fullName,
+                        age,
+                        apearence,
+                        healthStatus,
+                        clothing,
+                        missingLocation,
+                        location,
+                    });
+                    localStorage.setItem("photos", JSON.stringify(photos)); // Save to localStorage
+                    renderGallery();
+                };
+                reader.readAsDataURL(photoFile);
+            }
+        });
+
+        function renderGallery() {
+            gallery.innerHTML = "";
+            pagination.innerHTML = "";
+
+            const startIndex = (currentPage - 1) * photosPerPage;
+            const endIndex = Math.min(startIndex + photosPerPage, photos.length);
+            const currentPhotos = photos.slice(startIndex, endIndex);
+
+            currentPhotos.forEach((photo, index) => {
+                const photoCard = document.createElement("div");
+                photoCard.style.border = "1px solid #ddd";
+                photoCard.style.padding = "10px";
+                photoCard.style.width = "200px";
+                photoCard.style.textAlign = "center";
+                photoCard.style.borderRadius = "10px";
+                photoCard.style.boxShadow = "0px 2px 4px rgba(0, 0, 0, 0.1)";
+                photoCard.style.backgroundColor = "black";
+
+                photoCard.innerHTML = `
+                <img src="${photo.photo}" alt="Uploaded Photo" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px;">
+                <p style="color: white; font-size: larger;"><b>نام:</b> ${photo.fullName}</p>
+                <p style="color: white; font-size: larger;"><b>سن:</b> ${photo.age}</p>
+                <p style="color: white; font-size: larger;"><b>مشخصات ظاهری:</b> ${photo.apearence}</p>
+                <p style="color: white; font-size: larger;"><b>سلامت:</b> ${photo.healthStatus}</p>
+                <p style="color: white; font-size: larger;"><b>پوشش:</b> ${photo.clothing}</p>
+                <p style="color: white; font-size: larger;"><b>محل گمشدن:</b> ${photo.missingLocation}</p>
+                <p style="color: white; font-size: larger;"><b>لوکیشن:</b> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
+                <button onclick="editPhoto(${startIndex + index})" style="cursor: pointer; background-color: #FFC107; color: white; padding: 5px 10px; border: none; border-radius: 5px; margin-right: 5px;">ویرایش</button>
+                <button onclick="deletePhoto(${startIndex + index})" style="cursor: pointer; background-color: #F44336; color: white; padding: 5px 10px; border: none; border-radius: 5px;">حذف</button>
+            `;
+                gallery.appendChild(photoCard);
+            });
+
+            const totalPages = Math.ceil(photos.length / photosPerPage);
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement("button");
+                pageButton.textContent = i;
+                pageButton.style.margin = "0 5px";
+                pageButton.style.cursor = "pointer";
+                pageButton.style.padding = "5px 10px";
+                pageButton.style.border = "1px solid #ccc";
+                pageButton.style.borderRadius = "5px";
+                pageButton.style.backgroundColor = i === currentPage ? "#007BFF" : "#ffffff";
+                pageButton.style.color = i === currentPage ? "#ffffff" : "#000000";
+                pageButton.disabled = i === currentPage;
+                pageButton.addEventListener("click", () => {
+                    currentPage = i;
+                    renderGallery();
+                });
+                pagination.appendChild(pageButton);
+            }
+        }
+
+        function editPhoto(index) {
+            const photo = photos[index];
+            document.getElementById("photoUpload").value = "";
+            document.getElementById("fullName").value = photo.fullName;
+            document.getElementById("age").value = photo.age;
+            document.getElementById("apearence").value = photo.apearence;
+            document.getElementById("healthStatus").value = photo.healthStatus;
+            document.getElementById("clothing").value = photo.clothing;
+            document.getElementById("missingLocation").value = photo.missingLocation;
+            document.getElementById("location").value = photo.location;
+
+            photos.splice(index, 1);
+            localStorage.setItem("photos", JSON.stringify(photos)); // Update localStorage
+            renderGallery();
+        }
+
+        function deletePhoto(index) {
+            photos.splice(index, 1);
+            localStorage.setItem("photos", JSON.stringify(photos)); // Update localStorage
+            renderGallery();
+        }
+
+        // Render gallery on page load
+        renderGallery();
     </script>
 
 </body>
