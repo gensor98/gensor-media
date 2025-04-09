@@ -4,7 +4,7 @@
 <head>
     <title>یافتن گمشده ها</title>
     <link rel="icon" type="image/x-icon" href="./picture/gensor-media.png">
-    <link rel="stylesheet" href="./css/styleیافتن گمشده ها.css">
+    <link rel="stylesheet" href="./css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -129,6 +129,16 @@
                 <input type="url" id="location" placeholder="لینک لوکیشن" required
                     style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                 <br>
+                <label for="time" style="font-weight: bold;">مدت زمان گمشدن</label>
+                <br>
+                <input type="text" id="time" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
+                <label for="callnumber" style="font-weight: bold;">شماره تماس</label>
+                <br>
+                <input type="text" id="callnumber" required
+                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                <br>
                 <button type="submit"
                     style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">آپلود</button>
             </form>
@@ -140,7 +150,40 @@
     </div>
     <div id="pagination" style="margin-top: 20px; text-align: center;"></div>
 
-
+    <div id="editPopup" class="popup"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background-color: rgba(0, 0, 0, 0.9); border: 2px solid gold; border-radius: 10px; padding: 20px; width: 50%; height: 80%; overflow-y: auto; color: white;">
+        <span id="editClose" style="cursor: pointer; color: red; font-size: 20px; float: right;">&#10006;</span>
+        <h2 style="text-align: center; color: gold;">ویرایش اطلاعات</h2>
+        <form id="editForm">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="file" id="editPhoto" accept="image/*"
+                    style="width: 80%; margin-bottom: 10px; padding: 5px; text-align: center;">
+                <img id="editPhotoPreview" src="" alt="Preview"
+                    style="width: 250px; height: 250px; margin: 0 auto; display: none; border-radius: 10px;">
+            </div>
+            <label for="editFullName" style="font-weight: bold;">نام و نام خانوادگی</label>
+            <input type="text" id="editFullName" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editAge" style="font-weight: bold;">سن</label>
+            <input type="number" id="editAge" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editApearence" style="font-weight: bold;">مشخصات ظاهری</label>
+            <input type="text" id="editApearence" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editHealthStatus" style="font-weight: bold;">وضعیت سلامت</label>
+            <input type="text" id="editHealthStatus" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editClothing" style="font-weight: bold;">پوشش</label>
+            <input type="text" id="editClothing" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editMissingLocation" style="font-weight: bold;">محل گمشدن</label>
+            <input type="text" id="editMissingLocation" required
+                style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editLocation" style="font-weight: bold;">لوکیشن</label>
+            <input type="url" id="editLocation" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editTime" style="font-weight: bold;">مدت زمان گمشدن</label>
+            <input type="text" id="editTime" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <label for="editCallnumber" style="font-weight: bold;">شماره تماس</label>
+            <input type="text" id="editCallnumber" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+            <button type="submit"
+                style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 100%; font-size: larger; float: left;">ذخیره</button>
+        </form>
+    </div>
 
     <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
         <p
@@ -396,6 +439,8 @@
             const clothing = document.getElementById("clothing").value;
             const missingLocation = document.getElementById("missingLocation").value;
             const location = document.getElementById("location").value;
+            const time = document.getElementById("time").value;
+            const callnumber = document.getElementById("callnumber").value;
 
             if (photoFile) {
                 const reader = new FileReader();
@@ -409,6 +454,8 @@
                         clothing,
                         missingLocation,
                         location,
+                        time,
+                        callnumber,
                     });
                     localStorage.setItem("photos", JSON.stringify(photos)); // Save to localStorage
                     renderGallery();
@@ -427,7 +474,7 @@
 
             currentPhotos.forEach((photo, index) => {
                 const photoCard = document.createElement("div");
-                photoCard.style.border = "1px solid #ddd";
+                photoCard.style.border = "10px inset goldenrod";
                 photoCard.style.padding = "10px";
                 photoCard.style.width = "200px";
                 photoCard.style.textAlign = "center";
@@ -437,13 +484,16 @@
 
                 photoCard.innerHTML = `
                 <img src="${photo.photo}" alt="Uploaded Photo" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px;">
-                <p style="color: white; font-size: larger;"><b>نام:</b> ${photo.fullName}</p>
-                <p style="color: white; font-size: larger;"><b>سن:</b> ${photo.age}</p>
-                <p style="color: white; font-size: larger;"><b>مشخصات ظاهری:</b> ${photo.apearence}</p>
-                <p style="color: white; font-size: larger;"><b>سلامت:</b> ${photo.healthStatus}</p>
-                <p style="color: white; font-size: larger;"><b>پوشش:</b> ${photo.clothing}</p>
-                <p style="color: white; font-size: larger;"><b>محل گمشدن:</b> ${photo.missingLocation}</p>
-                <p style="color: white; font-size: larger;"><b>لوکیشن:</b> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
+                <hr>               
+                <p style="color: white; font-size: larger;"><b style="color: red;">نام:</b> ${photo.fullName}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">سن:</b> ${photo.age}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">مشخصات ظاهری:</b> ${photo.apearence}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">سلامت:</b> ${photo.healthStatus}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">پوشش:</b> ${photo.clothing}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">محل گمشدن:</b> ${photo.missingLocation}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">لوکیشن:</b> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">مدت زمان گمشدن:</b> ${photo.time}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">شماره تماس:</b> ${photo.callnumber}</p>
                 <button onclick="editPhoto(${startIndex + index})" style="cursor: pointer; background-color: #FFC107; color: white; padding: 5px 10px; border: none; border-radius: 5px; margin-right: 5px;">ویرایش</button>
                 <button onclick="deletePhoto(${startIndex + index})" style="cursor: pointer; background-color: #F44336; color: white; padding: 5px 10px; border: none; border-radius: 5px;">حذف</button>
             `;
@@ -470,21 +520,62 @@
             }
         }
 
-        function editPhoto(index) {
-            const photo = photos[index];
-            document.getElementById("photoUpload").value = "";
-            document.getElementById("fullName").value = photo.fullName;
-            document.getElementById("age").value = photo.age;
-            document.getElementById("apearence").value = photo.apearence;
-            document.getElementById("healthStatus").value = photo.healthStatus;
-            document.getElementById("clothing").value = photo.clothing;
-            document.getElementById("missingLocation").value = photo.missingLocation;
-            document.getElementById("location").value = photo.location;
+        let editIndex = null;
 
-            photos.splice(index, 1);
-            localStorage.setItem("photos", JSON.stringify(photos)); // Update localStorage
-            renderGallery();
+        function editPhoto(index) {
+            editIndex = index;
+            const photo = photos[index];
+            document.getElementById("editFullName").value = photo.fullName;
+            document.getElementById("editAge").value = photo.age;
+            document.getElementById("editApearence").value = photo.apearence;
+            document.getElementById("editHealthStatus").value = photo.healthStatus;
+            document.getElementById("editClothing").value = photo.clothing;
+            document.getElementById("editMissingLocation").value = photo.missingLocation;
+            document.getElementById("editLocation").value = photo.location;
+            document.getElementById("editTime").value = photo.time;
+            document.getElementById("editCallnumber").value = photo.callnumber;
+            document.getElementById("editClose").addEventListener("click", function () {
+            document.getElementById("editPopup").style.display = "none";
+            });
+
+            const editPhotoPreview = document.getElementById("editPhotoPreview");
+            editPhotoPreview.src = photo.photo;
+            editPhotoPreview.style.display = "block";
+
+            document.getElementById("editPopup").style.display = "block";
         }
+
+        document.getElementById("editPhoto").addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("editPhotoPreview").src = e.target.result;
+                    document.getElementById("editPhotoPreview").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById("editForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const updatedPhoto = {
+                photo: document.getElementById("editPhotoPreview").src || photos[editIndex].photo,
+                fullName: document.getElementById("editFullName").value,
+                age: document.getElementById("editAge").value,
+                apearence: document.getElementById("editApearence").value,
+                healthStatus: document.getElementById("editHealthStatus").value,
+                clothing: document.getElementById("editClothing").value,
+                missingLocation: document.getElementById("editMissingLocation").value,
+                location: document.getElementById("editLocation").value,
+                time: document.getElementById("editTime").value,
+                callnumber: document.getElementById("editCallnumber").value,
+            };
+            photos[editIndex] = updatedPhoto;
+            localStorage.setItem("photos", JSON.stringify(photos));
+            renderGallery();
+            document.getElementById("editPopup").style.display = "none";
+        });
 
         function deletePhoto(index) {
             photos.splice(index, 1);
