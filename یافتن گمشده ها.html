@@ -169,6 +169,11 @@
                 <img id="editPhotoPreview" src="" alt="Preview"
                     style="width: 250px; height: 250px; margin: 0 auto; display: none; border-radius: 10px;">
             </div>
+            <label for="editStatus" style="font-weight: bold;">وضعیت</label>
+            <select id="editStatus" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
+                <option value="found">پیدا شده</option>
+                <option value="not_found">پیدا نشده</option>
+            </select>
             <label for="editFullName" style="font-weight: bold;">نام و نام خانوادگی</label>
             <input type="text" id="editFullName" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
             <label for="editGender" style="font-weight: bold;">جنسیت</label>
@@ -455,6 +460,7 @@
             const location = document.getElementById("location").value;
             const time = document.getElementById("time").value;
             const callnumber = document.getElementById("callnumber").value;
+            const status = document.getElementById("status").value;
 
             if (photoFile) {
                 const reader = new FileReader();
@@ -471,6 +477,7 @@
                         location,
                         time,
                         callnumber,
+                        status,
                     });
                     localStorage.setItem("photos", JSON.stringify(photos)); // Save to localStorage
                     renderGallery();
@@ -510,6 +517,9 @@
                 <p style="color: white; font-size: larger;"><b style="color: red;">لوکیشن:</b> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
                 <p style="color: white; font-size: larger;"><b style="color: red;">مدت زمان گمشدن:</b> ${photo.time}</p>
                 <p style="color: white; font-size: larger;"><b style="color: red;">شماره تماس:</b> ${photo.callnumber}</p>
+                <hr>
+                <p style="color: white; font-size: larger;">عزیران در صورت پیداشدن گمشدگان گزینه ویرایش بزنید و وضعیت لمس کنید، روی حالت پیدا شده قرار دهید و ذخیره کنید!</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">وضعیت:</b> ${photo.status === "found" ? "پیدا شده" : "پیدا نشده"}</p>
                 <button onclick="editPhoto(${startIndex + index})" style="cursor: pointer; background-color: #FFC107; color: white; padding: 5px 10px; border: none; border-radius: 5px; margin-right: 5px;">ویرایش</button>
                 <button onclick="deletePhoto(${startIndex + index})" style="cursor: pointer; background-color: #F44336; color: white; padding: 5px 10px; border: none; border-radius: 5px;">حذف</button>
             `;
@@ -551,6 +561,7 @@
             document.getElementById("editLocation").value = photo.location;
             document.getElementById("editTime").value = photo.time;
             document.getElementById("editCallnumber").value = photo.callnumber;
+            document.getElementById("editStatus").value = photo.status;
             document.getElementById("editClose").addEventListener("click", function () {
             document.getElementById("editPopup").style.display = "none";
             });
@@ -588,6 +599,7 @@
                 location: document.getElementById("editLocation").value,
                 time: document.getElementById("editTime").value,
                 callnumber: document.getElementById("editCallnumber").value,
+                status: document.getElementById("editStatus").value,
             };
             photos[editIndex] = updatedPhoto;
             localStorage.setItem("photos", JSON.stringify(photos));
