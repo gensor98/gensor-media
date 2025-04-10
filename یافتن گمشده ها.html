@@ -147,8 +147,8 @@
                 <input type="text" id="callnumber" required
                     style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                 <br>
-                <button type="submit"
-                    style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">آپلود</button>
+                <button id="uploadButton" type="submit"
+                    style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">ثبت اطلاعات</button>
             </form>
         </div>
         <hr>
@@ -447,7 +447,7 @@
         let currentPage = 1;
 
         document.getElementById("uploadForm").addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault(); // جلوگیری از ارسال پیش‌فرض فرم
 
             const photoFile = document.getElementById("photoUpload").files[0];
             const fullName = document.getElementById("fullName").value;
@@ -460,7 +460,6 @@
             const location = document.getElementById("location").value;
             const time = document.getElementById("time").value;
             const callnumber = document.getElementById("callnumber").value;
-            const status = document.getElementById("status").value;
 
             if (photoFile) {
                 const reader = new FileReader();
@@ -477,10 +476,15 @@
                         location,
                         time,
                         callnumber,
-                        status,
                     });
-                    localStorage.setItem("photos", JSON.stringify(photos)); // Save to localStorage
+                    localStorage.setItem("photos", JSON.stringify(photos)); // ذخیره در localStorage
                     renderGallery();
+
+                    // خالی کردن فرم
+                    document.getElementById("uploadForm").reset();
+
+                    // اسکرول به بخش گالری
+                    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
                 };
                 reader.readAsDataURL(photoFile);
             }
@@ -508,7 +512,7 @@
                 <img src="${photo.photo}" alt="Uploaded Photo" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px;">
                 <hr>               
                 <p style="color: white; font-size: larger;"><b style="color: red;">نام و نام خانوادگی:</b> ${photo.fullName}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">جنسیت:</b> ${photo.gender}</p>
+                <p style="color: white; font-size: larger;"><b style="color: red;">جنسیت:</b> ${photo.gender === "male" ? "مرد" : "زن"}</p>
                 <p style="color: white; font-size: larger;"><b style="color: red;">سن:</b> ${photo.age}</p>
                 <p style="color: white; font-size: larger;"><b style="color: red;">مشخصات ظاهری:</b> ${photo.apearence}</p>
                 <p style="color: white; font-size: larger;"><b style="color: red;">سلامت:</b> ${photo.healthStatus}</p>
@@ -611,6 +615,9 @@
             photos.splice(index, 1);
             localStorage.setItem("photos", JSON.stringify(photos)); // Update localStorage
             renderGallery();
+
+            // اسکرول به بالای صفحه و ایستادن روی فرم خام
+            document.getElementById("uploadSection").scrollIntoView({ behavior: "smooth" });
         }
 
         // Render gallery on page load
