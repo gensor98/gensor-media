@@ -88,7 +88,7 @@
                 "جوینده یابنده است!"</p>
         </b>
 
-        <div id="uploadSection" style="text-align: center; width: 50%; margin: auto;">
+        <div id="uploadSection" style="text-align: center; width: 100%; margin: auto;">
             <form id="uploadForm" enctype="multipart/form-data"
                 style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white;">
                 <input type="file" id="photoUpload" accept="image/*" required
@@ -99,22 +99,19 @@
                         <label for="fullName" style="font-weight: bold;">نام و نام خانوادگی</label>
                         <br>
                         <input type="text" id="fullName" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                     </div>
                     <div style="flex: 1;">
                         <label for="healthStatus" style="font-weight: bold;">وضعیت سلامت</label>
                         <br>
                         <input type="text" id="healthStatus" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                     </div>
-                </div>
-                <br>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
                     <div style="flex: 1;">
                         <label for="gender" style="font-weight: bold;">جنسیت</label>
                         <br>
                         <select id="gender" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                             <option value="male">مرد</option>
                             <option value="female">زن</option>
                         </select>
@@ -123,49 +120,53 @@
                         <label for="age" style="font-weight: bold;">سن</label>
                         <br>
                         <input type="number" id="age" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                     </div>
-                </div>
-                <br>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
                     <div style="flex: 1;">
                         <label for="time" style="font-weight: bold;">مدت زمان گمشدن</label>
                         <br>
                         <input type="text" id="time" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                     </div>
                     <div style="flex: 1;">
                         <label for="callnumber" style="font-weight: bold;">شماره تماس</label>
                         <br>
                         <input type="text" id="callnumber" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 40%; background-color: black; color: white;">
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
                     </div>
                 </div>
                 <br>
-                <label for="apearence" style="font-weight: bold;">مشخصات ظاهری</label>
-                <br>
-                <input type="text" id="apearence"
-                    placeholder="مدل و رنگ مو ، پوست و رنگ پوست و نشانه های ظاهری و مادرزادی و ... . " required
-                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                <br>
-                <label for="clothing" style="font-weight: bold;">پوشش</label>
-                <br>
-                <input type="text" id="clothing" required
-                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                <br>
-                <label for="missingLocation" style="font-weight: bold;">محل گمشدن</label>
-                <br>
-                <input type="text" id="missingLocation"
-                    placeholder="نام شهر به همراه مکان به عنوان مثال:شهر قرچک در مسجد جامع ،جلوی درب خانه بازار و... ."
-                    required
-                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                <br>
-                <label for="location" style="font-weight: bold;">لوکیشن</label>
-                <br>
-                <input type="url" id="location" placeholder="لینک لوکیشن" required
-                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                <br>
-                <button id="uploadButton" type="submit"
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label for="apearence" style="font-weight: bold;">مشخصات ظاهری</label>
+                        <br>
+                        <input type="text" id="apearence"
+                            placeholder="مدل و رنگ مو ، پوست و رنگ پوست و نشانه های ظاهری و مادرزادی و ... . " required
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="clothing" style="font-weight: bold;">پوشش</label>
+                        <br>
+                        <input type="text" id="clothing" required
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label for="missingLocation" style="font-weight: bold;">محل گمشدن</label>
+                        <br>
+                        <input type="text" id="missingLocation"
+                            placeholder="نام شهر به همراه مکان به عنوان مثال:شهر قرچک در مسجد جامع ،جلوی درب خانه ، بازار و... ."
+                            required
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="location" style="font-weight: bold;">لوکیشن</label>
+                        <br>
+                        <input type="url" id="location" placeholder="لینک لوکیشن" required
+                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                    </div>
+                </div><button id="uploadButton" type="submit"
                     style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">ثبت
                     اطلاعات</button>
             </form>
@@ -188,37 +189,98 @@
                 <img id="editPhotoPreview" src="" alt="Preview"
                     style="width: 250px; height: 250px; margin: 0 auto; display: none; border-radius: 10px;">
             </div>
-            <label for="editStatus" style="font-weight: bold;">وضعیت</label>
-            <select id="editStatus" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-                <option value="found">پیدا شده</option>
-                <option value="not_found">پیدا نشده</option>
-            </select>
-            <label for="editFullName" style="font-weight: bold;">نام و نام خانوادگی</label>
-            <input type="text" id="editFullName" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editGender" style="font-weight: bold;">جنسیت</label>
-            <select id="editGender" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-                <option value="male">مرد</option>
-                <option value="female">زن</option>
-            </select>
-            <label for="editAge" style="font-weight: bold;">سن</label>
-            <input type="number" id="editAge" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editApearence" style="font-weight: bold;">مشخصات ظاهری</label>
-            <input type="text" id="editApearence" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editHealthStatus" style="font-weight: bold;">وضعیت سلامت</label>
-            <input type="text" id="editHealthStatus" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editClothing" style="font-weight: bold;">پوشش</label>
-            <input type="text" id="editClothing" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editMissingLocation" style="font-weight: bold;">محل گمشدن</label>
-            <input type="text" id="editMissingLocation" required
-                style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editLocation" style="font-weight: bold;">لوکیشن</label>
-            <input type="url" id="editLocation" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editTime" style="font-weight: bold;">مدت زمان گمشدن</label>
-            <input type="text" id="editTime" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <label for="editCallnumber" style="font-weight: bold;">شماره تماس</label>
-            <input type="text" id="editCallnumber" required style="width: 100%; margin-bottom: 10px; padding: 5px;">
-            <button type="submit"
-                style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 100%; font-size: larger; float: left;">ذخیره</button>
+            <br>
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="editFullName" style="font-weight: bold;">نام و نام خانوادگی</label>
+                    <br>
+                    <input type="text" id="editFullName" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editHealthStatus" style="font-weight: bold;">وضعیت سلامت</label>
+                    <br>
+                    <input type="text" id="editHealthStatus" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editGender" style="font-weight: bold;">جنسیت</label>
+                    <br>
+                    <select id="editGender" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        <option value="male">مرد</option>
+                        <option value="female">زن</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="editAge" style="font-weight: bold;">سن</label>
+                    <br>
+                    <input type="number" id="editAge" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editTime" style="font-weight: bold;">مدت زمان گمشدن</label>
+                    <br>
+                    <input type="text" id="editTime" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editCallnumber" style="font-weight: bold;">شماره تماس</label>
+                    <br>
+                    <input type="text" id="editCallnumber" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="editApearence" style="font-weight: bold;">مشخصات ظاهری</label>
+                    <br>
+                    <input type="text" id="editApearence"
+                        placeholder="مدل مو و رنگش ، پوست و رنگش و نشانه ظاهری و مادرزادی و ... . " required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editClothing" style="font-weight: bold;">پوشش</label>
+                    <br>
+                    <input type="text" id="editClothing" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="editMissingLocation" style="font-weight: bold;">محل گمشدن</label>
+                    <br>
+                    <input type="text" id="editMissingLocation"
+                        placeholder="نام شهر به همراه مکان به عنوان مثال:شهر قرچک در مسجد جامع ،جلوی درب خانه ، بازار و... ."
+                        required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="editLocation" style="font-weight: bold;">لوکیشن</label>
+                    <br>
+                    <input type="url" id="editLocation" placeholder="لینک لوکیشن" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <div>
+                    <label for="editStatus" style="font-weight: bold;">وضعیت</label>
+                    <select id="editStatus" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 60%; background-color: black; color: white;">
+                        <option value="not_found">پیدا نشده</option>
+                        <option value="found">پیدا شده</option>
+                    </select>
+                </div>
+                <div style="flex: 1;">
+                    <button type="submit"
+                        style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 100%; font-size: larger; float: left;">ذخیره</button>
+                </div>
+            </div>
         </form>
     </div>
 
@@ -577,9 +639,10 @@
             document.getElementById("editFullName").value = photo.fullName;
             document.getElementById("editGender").value = photo.gender;
             document.getElementById("editAge").value = photo.age;
-            document.getElementById("editApearence").value = photo.apearence;
-            document.getElementById("editHealthStatus").value = photo.healthStatus;
-            document.getElementById("editClothing").value = photo.clothing;
+            document.getElementById("editStatus").value = photo.status || "not_found";
+            document.getElementById("editClose").addEventListener("click", function () {
+                document.getElementById("editPopup").style.display = "none";
+            });
             document.getElementById("editMissingLocation").value = photo.missingLocation;
             document.getElementById("editLocation").value = photo.location;
             document.getElementById("editTime").value = photo.time;
