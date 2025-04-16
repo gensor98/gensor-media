@@ -90,7 +90,7 @@
 
         <div id="uploadSection" style="text-align: center; width: 100%; margin: auto;">
             <form id="uploadForm" enctype="multipart/form-data"
-                style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white;">
+                style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white; width: 80%; margin: auto;">
                 <input type="file" id="photoUpload" accept="image/*" required
                     style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; background-color: black; color: white;">
                 <br>
@@ -583,28 +583,56 @@
                 const photoCard = document.createElement("div");
                 photoCard.style.border = "10px inset goldenrod";
                 photoCard.style.padding = "10px";
-                photoCard.style.width = "200px";
+                photoCard.style.width = "300px";
                 photoCard.style.textAlign = "center";
                 photoCard.style.borderRadius = "10px";
                 photoCard.style.boxShadow = "0px 2px 4px rgba(0, 0, 0, 0.1)";
                 photoCard.style.backgroundColor = "black";
 
                 photoCard.innerHTML = `
-                <img src="${photo.photo}" alt="Uploaded Photo" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px;">
+                <img src="${photo.photo}" alt="Uploaded Photo" style="width: 150px; height: 150px; border-radius: 10px; margin-bottom: 10px;">
                 <hr>               
-                <p style="color: white; font-size: larger;"><b style="color: red;">نام و نام خانوادگی:</b> ${photo.fullName}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">جنسیت:</b> ${photo.gender === "male" ? "مرد" : "زن"}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">سن:</b> ${photo.age}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">مشخصات ظاهری:</b> ${photo.apearence}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">سلامت:</b> ${photo.healthStatus}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">پوشش:</b> ${photo.clothing}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">محل گمشدن:</b> ${photo.missingLocation}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">لوکیشن:</b> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">مدت زمان گمشدن:</b> ${photo.time}</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">شماره تماس:</b> ${photo.callnumber}</p>
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">نام و نام خانوادگی</b> <br> ${photo.fullName}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">وضعیت سلامت</b> <br> ${photo.healthStatus}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">جنسیت</b> <br> ${photo.gender === "male" ? "مرد" : "زن"}</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">سن:</b> <br> ${photo.age}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">مدت زمان گمشدن:</b> <br> ${photo.time}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">شماره تماس:</b> <br> ${photo.callnumber}</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">مشخصات ظاهری</b> <br> ${photo.apearence}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">پوشش</b> <br> ${photo.clothing}</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">محل گمشدن</b> <br> ${photo.missingLocation}</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p style="color: white; font-size: medium;"><b style="color: red;">لوکیشن</b> <br> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
+                    </div>
+                </div>
                 <hr>
-                <p style="color: white; font-size: larger;">عزیران در صورت پیداشدن گمشدگان گزینه ویرایش بزنید و وضعیت لمس کنید، روی حالت پیدا شده قرار دهید و ذخیره کنید!</p>
-                <p style="color: white; font-size: larger;"><b style="color: red;">وضعیت:</b> ${photo.status === "found" ? "پیدا شده" : "پیدا نشده"}</p>
+                <p style="color: white; font-size: large;">عزیران در صورت پیداشدن گمشدگان گزینه ویرایش را بزنید و وضعیت را لمس کنید، روی حالت پیدا شده قرار دهید و ذخیره کنید!</p>
+                <p style="color: white; font-size: large;"><b style="color: red;">وضعیت:</b> ${photo.status === "found" ? "پیدا شده" : "پیدا نشده"}</p>
                 <button onclick="editPhoto(${startIndex + index})" style="cursor: pointer; background-color: #FFC107; color: white; padding: 5px 10px; border: none; border-radius: 5px; margin-right: 5px;">ویرایش</button>
                 <button onclick="deletePhoto(${startIndex + index})" style="cursor: pointer; background-color: #F44336; color: white; padding: 5px 10px; border: none; border-radius: 5px;">حذف</button>
             `;
