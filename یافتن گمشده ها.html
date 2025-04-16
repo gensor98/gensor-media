@@ -88,89 +88,116 @@
                 "جوینده یابنده است!"</p>
         </b>
 
-        <div id="uploadSection" style="text-align: center; width: 100%; margin: auto;">
-            <form id="uploadForm" enctype="multipart/form-data"
-                style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white; width: 80%; margin: auto;">
-                <input type="file" id="photoUpload" accept="image/*" required
-                    style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; background-color: black; color: white;">
-                <br>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <label for="fullName" style="font-weight: bold;">نام و نام خانوادگی</label>
-                        <br>
-                        <input type="text" id="fullName" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+        <b style="text-shadow: 4px 4px 8px black;">
+            <p
+                style="line-height: 2; font-size: xx-large; font-family: cursive; text-align: center; color: #ffffff; margin: 50px;">
+                وقتی فردی گم می‌ شود، مراجعه به دستگاه‌های انتظامی و ارائه مشخصات فردی، اولین قدم است، اما این فرآیند
+                ممکن است زمان‌ بر باشد و اضطراب خانواده‌ ها را افزایش دهد. با همکاری مردم و نهادهای امنیتی، می‌توان این
+                روند را تسهیل کرد.
+
+                در موارد گمشدن نوزادان، کودکان یا سالمندان، سرعت عمل اهمیت زیادی دارد. ارائه اطلاعات دقیق مانند عکس،
+                مشخصات ظاهری و شرایط سلامت فرد، به نیروهای امنیتی کمک می‌ کند تا جستجو را هدفمندتر انجام دهند.
+
+                همکاری مردم با پلیس، انتشار سریع تصاویر و توصیف دقیق فرد گمشده در فضای مجازی و محلی، می‌ تواند زمان یافتن
+                عزیزان را کاهش دهد. این مشارکت، نه‌ تنها آرامش را به خانواده‌ ها باز می‌ گرداند، بلکه امنیت اجتماعی را نیز
+                افزایش می‌ دهد.
+
+                بیایید با همدلی و مسئولیت‌ پذیری، به یافتن عزیزان گمشده کمک کنیم تا کمتر شاهد نگرانی خانواده‌ها باشیم.
+
+            </p>
+        </b>
+
+        <details id="summary">
+            <summary
+                style="cursor: pointer; text-align: center; font-size: xxx-large; color: #000000; text-shadow: 2px 2px 4px rgb(255, 0, 0); margin-right: 100px; margin-left: 100px;">
+                <b>در صورتی که می خواهید گمشده ای را پیدا کنید ، روی همین نوشته ضربه بزنید و فرم مربوطه را پر
+                    کنید!</b>
+            </summary>
+            <div id="uploadSection" style="text-align: center; width: 100%; margin: auto;">
+                <form id="uploadForm" enctype="multipart/form-data"
+                    style="background-color: rgba(0, 0, 0, 0.8); border: 1px solid gold; border-radius: 10px; padding: 15px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); color: white; width: 80%; margin: auto;">
+                    <input type="file" id="photoUpload" accept="image/*" required
+                        style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; background-color: black; color: white;">
+                    <br>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label for="fullName" style="font-weight: bold;">نام و نام خانوادگی</label>
+                            <br>
+                            <input type="text" id="fullName" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="healthStatus" style="font-weight: bold;">وضعیت سلامت</label>
+                            <br>
+                            <input type="text" id="healthStatus" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="gender" style="font-weight: bold;">جنسیت</label>
+                            <br>
+                            <select id="gender" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                                <option value="male">مرد</option>
+                                <option value="female">زن</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="age" style="font-weight: bold;">سن</label>
+                            <br>
+                            <input type="number" id="age" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="time" style="font-weight: bold;">مدت زمان گمشدن</label>
+                            <br>
+                            <input type="text" id="time" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="callnumber" style="font-weight: bold;">شماره تماس</label>
+                            <br>
+                            <input type="text" id="callnumber" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <label for="healthStatus" style="font-weight: bold;">وضعیت سلامت</label>
-                        <br>
-                        <input type="text" id="healthStatus" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
+                    <br>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label for="apearence" style="font-weight: bold;">مشخصات ظاهری</label>
+                            <br>
+                            <input type="text" id="apearence"
+                                placeholder="مدل و رنگ مو ، پوست و رنگ پوست و نشانه های ظاهری و مادرزادی و ... . "
+                                required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="clothing" style="font-weight: bold;">پوشش</label>
+                            <br>
+                            <input type="text" id="clothing" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <label for="gender" style="font-weight: bold;">جنسیت</label>
-                        <br>
-                        <select id="gender" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                            <option value="male">مرد</option>
-                            <option value="female">زن</option>
-                        </select>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="age" style="font-weight: bold;">سن</label>
-                        <br>
-                        <input type="number" id="age" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="time" style="font-weight: bold;">مدت زمان گمشدن</label>
-                        <br>
-                        <input type="text" id="time" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="callnumber" style="font-weight: bold;">شماره تماس</label>
-                        <br>
-                        <input type="text" id="callnumber" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 80%; background-color: black; color: white;">
-                    </div>
-                </div>
-                <br>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <label for="apearence" style="font-weight: bold;">مشخصات ظاهری</label>
-                        <br>
-                        <input type="text" id="apearence"
-                            placeholder="مدل و رنگ مو ، پوست و رنگ پوست و نشانه های ظاهری و مادرزادی و ... . " required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="clothing" style="font-weight: bold;">پوشش</label>
-                        <br>
-                        <input type="text" id="clothing" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <label for="missingLocation" style="font-weight: bold;">محل گمشدن</label>
-                        <br>
-                        <input type="text" id="missingLocation"
-                            placeholder="نام شهر به همراه مکان به عنوان مثال:شهر قرچک در مسجد جامع ،جلوی درب خانه ، بازار و... ."
-                            required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="location" style="font-weight: bold;">لوکیشن</label>
-                        <br>
-                        <input type="url" id="location" placeholder="لینک لوکیشن" required
-                            style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
-                    </div>
-                </div><button id="uploadButton" type="submit"
-                    style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">ثبت
-                    اطلاعات</button>
-            </form>
-        </div>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label for="missingLocation" style="font-weight: bold;">محل گمشدن</label>
+                            <br>
+                            <input type="text" id="missingLocation"
+                                placeholder="نام شهر به همراه مکان به عنوان مثال:شهر قرچک در مسجد جامع ،جلوی درب خانه ، بازار و... ."
+                                required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="location" style="font-weight: bold;">لوکیشن</label>
+                            <br>
+                            <input type="url" id="location" placeholder="لینک لوکیشن" required
+                                style="margin-bottom: 15px; padding: 5px; border: 1px solid gold; border-radius: 5px; width: 95%; background-color: black; color: white;">
+                        </div>
+                    </div><button id="uploadButton" type="submit"
+                        style="cursor: pointer; background-color: gold; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px;">ثبت
+                        اطلاعات</button>
+                </form>
+            </div>
+        </details>
         <hr>
         <div id="gallerySection" style="text-align: center; width: 80%; margin: auto; display: none;"></div>
         <div id="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
@@ -583,7 +610,7 @@
                 const photoCard = document.createElement("div");
                 photoCard.style.border = "10px inset goldenrod";
                 photoCard.style.padding = "10px";
-                photoCard.style.width = "300px";
+                photoCard.style.width = "250px";
                 photoCard.style.textAlign = "center";
                 photoCard.style.borderRadius = "10px";
                 photoCard.style.boxShadow = "0px 2px 4px rgba(0, 0, 0, 0.1)";
@@ -592,46 +619,49 @@
                 photoCard.innerHTML = `
                 <img src="${photo.photo}" alt="Uploaded Photo" style="width: 150px; height: 150px; border-radius: 10px; margin-bottom: 10px;">
                 <hr>               
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">نام و نام خانوادگی</b> <br> ${photo.fullName}</p>
+                <details style="background-color: black; color: white; border: 1px solid gold; border-radius: 5px; padding: 10px; margin-bottom: 10px;">
+                    <summary style="cursor: pointer; font-size: larger; color: green;">مشاهده اطلاعات</summary>
+                    <div style="display: flex; justify-content: space-between; gap: 10px; margin-top: 10px;">
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">نام و نام خانوادگی</b> <br> ${photo.fullName}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">وضعیت سلامت</b> <br> ${photo.healthStatus}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">جنسیت</b> <br> ${photo.gender === "male" ? "مرد" : "زن"}</p>
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">وضعیت سلامت</b> <br> ${photo.healthStatus}</p>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">سن:</b> <br> ${photo.age}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">مدت زمان گمشدن:</b> <br> ${photo.time}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">شماره تماس:</b> <br> ${photo.callnumber}</p>
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">جنسیت</b> <br> ${photo.gender === "male" ? "مرد" : "زن"}</p>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">مشخصات ظاهری</b> <br> ${photo.apearence}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">پوشش</b> <br> ${photo.clothing}</p>
+                        </div>
                     </div>
-                </div>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">سن:</b> <br> ${photo.age}</p>
+                    <div style="display: flex; justify-content: space-between; gap: 10px;">
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">محل گمشدن</b> <br> ${photo.missingLocation}</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: white; font-size: medium;"><b style="color: red;">لوکیشن</b> <br> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">مدت زمان گمشدن:</b> <br> ${photo.time}</p>
-                    </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">شماره تماس:</b> <br> ${photo.callnumber}</p>
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">مشخصات ظاهری</b> <br> ${photo.apearence}</p>
-                    </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">پوشش</b> <br> ${photo.clothing}</p>
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">محل گمشدن</b> <br> ${photo.missingLocation}</p>
-                    </div>
-                    <div style="flex: 1;">
-                        <p style="color: white; font-size: medium;"><b style="color: red;">لوکیشن</b> <br> <a href="${photo.location}" target="_blank" style="color: #007BFF;">مشاهده</a></p>
-                    </div>
-                </div>
+                </details>
                 <hr>
-                <p style="color: white; font-size: large;">عزیران در صورت پیداشدن گمشدگان گزینه ویرایش را بزنید و وضعیت را لمس کنید، روی حالت پیدا شده قرار دهید و ذخیره کنید!</p>
+                <p style="color: white; font-size: medium;"><b>عزیران در صورت پیداشدن گمشدگان گزینه ویرایش را بزنید و وضعیت را لمس کنید، روی حالت پیدا شده قرار دهید و ذخیره کنید!</p>
                 <p style="color: white; font-size: large;"><b style="color: red;">وضعیت:</b> ${photo.status === "found" ? "پیدا شده" : "پیدا نشده"}</p>
                 <button onclick="editPhoto(${startIndex + index})" style="cursor: pointer; background-color: #FFC107; color: white; padding: 5px 10px; border: none; border-radius: 5px; margin-right: 5px;">ویرایش</button>
                 <button onclick="deletePhoto(${startIndex + index})" style="cursor: pointer; background-color: #F44336; color: white; padding: 5px 10px; border: none; border-radius: 5px;">حذف</button>
@@ -727,7 +757,7 @@
             renderGallery();
 
             // اسکرول به بالای صفحه و ایستادن روی فرم خام
-            document.getElementById("uploadSection").scrollIntoView({ behavior: "smooth" });
+            document.getElementById("summary").scrollIntoView({ behavior: "smooth" });
         }
 
         // Render gallery on page load
